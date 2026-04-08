@@ -1,4 +1,4 @@
-export const SITE_TITLE = "Token";
+export const SITE_TITLE = "Blade";
 export const SITE_DESCRIPTION =
   `Token Astro + Tailwind CSS starter featuring a sleek black-and-white terminal-inspired design, with support for RSS, sitemap, MD/MDX blog posts static content.`.trim();
 
