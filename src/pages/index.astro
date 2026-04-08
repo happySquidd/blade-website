@@ -14,6 +14,19 @@ const posts = (await getCollection("blog")).sort(
 <Layout title="Token - Astro + Tailwind Portfolio Template">
   <Hero />
   <Section
+  title="What We Do"
+  className={"bg-gradient-to-b from-black/70 from-[5%] to-black via-black"}
+>
+  <div class="w-full grid place-items-center">
+    <div class="max-w-4xl text-xl md:text-lg opacity-90 text-center justify-evenly">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel sapien eget nunc
+        efficitur efficitur. Donec vel sapien eget nunc efficitur efficitur. Donec vel sapien eget nunc
+        efficitur efficitur. Donec vel sapien eget nunc efficitur efficitur. Donec vel sapien eget nunc</p>
+    </div>
+  </div>
+</Section>
+
+  <Section
     title="My Posts"
     className={"bg-gradient-to-b from-black/70 from-[5%] to-black via-black"}
   >
