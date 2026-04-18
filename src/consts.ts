@@ -9,7 +9,7 @@ export const KNOWN_TECH =
 export const ABOUT_ME =
   `We are a team of two people, helping local tattoo artists showcase and promote their business with an interactive and attractive website that leaves impressions. We value art and want to help artists by taking care of their online management needs such as social media management. Let us know if you're interested!`.trim();
 export const GITHUB_USERNAME = "";
-export const QUOTE = "Programmer, Gamer, Editor and Student";
+export const QUOTE = "Creative, Captivating, Local";
 export const NAV_LINKS: Array<{ title: string; href?: string }> = [
   {
     title: "Blog",
