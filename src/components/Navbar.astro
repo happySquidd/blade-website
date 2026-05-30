@@ -19,20 +19,24 @@ import { SITE_TITLE, NAV_LINKS as links } from "@/consts";
       {
         links.map((link) => {
           const href =
-            link.href ?? link.title.toLowerCase().replaceAll(" ", "-");
+            link.href ?? "/" + link.title.toLowerCase().replaceAll(" ", "-");
+          const isExternal = /^(https?:)?\/\//.test(href);
           const pathname = Astro.url.pathname.replace(
             import.meta.env.BASE_URL,
             "",
           );
-          const subpath = pathname.match(/[^\/]+/g);
           const isActive =
-            href === pathname || href === "/" + (subpath?.[0] || "");
+            !isExternal &&
+            !href.includes("#") &&
+            (href === pathname || href === pathname.replace(/\/$/, ""));
           return (
             <>
               <a
                 class:list={[{ "bg-white text-black": isActive }]}
                 class="hover:bg-white hover:text-black transition-all ease-in-out px-2 max-w-fit"
-                href={`/${href}`}
+                href={href}
+                target={isExternal ? "_blank" : undefined}
+                rel={isExternal ? "noopener noreferrer" : undefined}
               >
                 <div>{link.title}</div>
               </a>

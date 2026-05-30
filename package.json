@@ -1,5 +1,5 @@
 {
-  "name": "my-landing-page-token",
+  "name": "portfolio",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -14,7 +14,7 @@
     "@astrojs/rss": "^4.0.11",
     "@astrojs/sitemap": "^3.2.1",
     "@astrojs/tailwind": "^5.1.4",
-    "astro": "^5.1.3",
+    "astro": "^5.18.1",
     "tailwindcss": "^3.4.17"
   },
   "devDependencies": {

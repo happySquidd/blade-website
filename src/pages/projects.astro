@@ -1,0 +1,40 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Section from "@/components/Section.astro";
+import ProjectCard from "@/components/ProjectCard.astro";
+import { getProjects } from "@/lib/projects";
+
+const projects = await getProjects();
+---
+
+<Layout title="Projects">
+  <Section title="Projects">
+    {
+      projects.length > 0 ? (
+        <div class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {projects.map((project) => (
+            <ProjectCard
+              name={project.name}
+              description={project.description}
+              url={project.url}
+              homepage={project.homepage}
+              stars={project.stars}
+              language={project.language}
+            />
+          ))}
+        </div>
+      ) : (
+        <div class="w-full grid place-items-center">
+          <div class="max-w-2xl border-2 border-white/40 rounded-lg p-6 text-center opacity-80">
+            <p>
+              <span class="text-white/60 mr-2">❯</span>
+              No projects yet. Add them to <code>PROJECTS</code> in{" "}
+              <code>src/consts.ts</code>, or set <code>GITHUB_USERNAME</code> to
+              auto-load your repos.
+            </p>
+          </div>
+        </div>
+      )
+    }
+  </Section>
+</Layout>
